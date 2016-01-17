@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>T1303 WokersTest</title>
+    <style>
+      #dump{
+        font-family: monospace;
+      }
+    </style>
+    <script charset="UTF-8" src="./test.js"></script>
+  </head>
+  <body>
+    <article>
+    <h1>Y1303 WorkersTest</h1>
+    <p>WWAマップデータをAjax通信で受け取って、パラメータを解析して表示するテスト(軽量版) by rmn.</p>
+    <p>同じ階層にあるファイル「24LIFE.dat」から各種パラメータを拾います。詳しい説明は同梱のtest.jsを参照してください。</p>
+    <section>
+    <h1>概要</h1>
+    <p>Web Workers APIで重いデータ処理を別スレッドで行います。</p>
+    <p>WWAのマップデータファイル「24LIFE.dat」をXHRでGETします。<p>
+    <p>GETしたらそのデータを符号なし8ビット配列(Uint8Array)型の配列
+    にぶちこみます。</p>
+    <p>GETした時点でマップデータは圧縮されているので、解凍します。</p>
+    <p>ファイルが、正常に解凍できているかどうかをジャッジした上でパラメータを解析します。</p>
+    <p>このサンプルでは、解凍後の最初の1024要素を16進数の形で出力します。</p>
+    </section>
+    <section>
+    <h1>結果</h1>
+    <p>Webkit系ブラウザでは、遅くなってしまいました。その代わり、FirefoxとOperaは大幅に時間短縮されました。</p>
+    <p><a href="../no_workers/">通常版はこちら</a></p>
+    </section>
+    <fieldset>
+      <legend>吸いだしたパラメータ</legend>
+      <label>World Name:</label>
+      <input id="wName">
+      <label>画像ファイル名</label>
+      <input id="cgName"><br>
+
+      <label>初期X座標:</label>
+      <input id="px">
+      <label>初期Y座標:</label>
+      <input id="py"><br>
+      <label>ゲームオーバーX座標:</label>
+      <input id="gox">
+      <label>ゲームオーバーY座標:</label>
+      <input id="goy"><br>
+      <label>背景パーツ総数(0を含む):</label>
+      <input id="mapPartsMax">
+      <label>物体パーツ総数(0を含む):</label>
+      <input id="objPartsMax"><br>
+
+
+      <label>生命力上限:</label>
+      <input id="emx">
+      <label>初期生命力:</label>
+      <input id="eng"><br>
+      <label>初期攻撃力:</label>
+      <input id="atk">
+      <label>初期防御力:</label>
+      <input id="def"><br>
+      <label>初期所持金:</label>
+      <input id="gld"><br>
+
+      <label>マップサイズ:</label>
+      <input id="mapWidth"><sup>2</sup>
+      <label>メッセージ最大数:</label>
+      <input id="mesMax">
+      
+    </fieldset>
+    <footer>
+    | Y1303 | 2013 rmn.
+    </footer>
+    </article>
+  </body>
+</html>

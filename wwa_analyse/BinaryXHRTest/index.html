@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>Y1301 BinaryXHRTest</title>
+    <style>
+      #dump{
+        font-family: monospace;
+      }
+    </style>
+    <script charset="UTF-8" src="./test.js"></script>
+  </head>
+  <body>
+    <article>
+    <hgroup>
+    <h1>Y1301 BinaryXHRTest</h1>
+    <h2>バイナリデータをAjax通信で受け取って表示するテスト by rmn.</h2>
+    </hgroup>
+    <p>同じ階層にあるファイル「island02.dat」の先頭1024バイトを出力します。詳しい説明は同梱のtest.jsを参照してください。</p>
+    <section>
+    <h1>概要</h1>
+    <p>WWAのマップデータファイル「island02.dat」をXHRでGETします。<p>
+    <p>GETしたらそのデータを符号なし8ビット配列(Uint8Array)型の配列
+    にぶちこみます。</p>
+    <p>このサンプルでは、その配列の先頭1024要素を16進数の形で出力します。</p>
+    </section>
+    <textarea id="dump" rows="10" cols="50">
+    </textarea>
+    <footer>
+    | Y1301 | 2013 rmn.
+    </footer>
+    </article>
+  </body>
+</html>
